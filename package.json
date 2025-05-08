@@ -1,0 +1,19 @@
+{
+  "name": "qdnbridge-json",
+  "version": "1.0.0",
+  "main": "QDNjsonbridge.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ice.Dev",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^9.25.1"
+  },
+  "dependencies": {
+    "eslint": "^9.25.1"
+  }
+}

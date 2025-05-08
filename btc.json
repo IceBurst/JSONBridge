@@ -1,0 +1,52 @@
+{
+  "model": {
+    "name": "Coin Name",
+    "height": "Block Height",
+    "time": "Time as epoch or Standardized - Zulu",
+    "low_fee_per_kb": "Slow Transaction Speed per 1000 bytes",
+    "medium_fee_per_kb": "Medium Transaction Speed per 1000 bytes",
+    "high_fee_per_kb": "Fast Transaction Speed per 1000 bytes"
+  },
+  "data": [
+    {
+      "name": "BTC",
+      "sourceServers": [
+        {
+          "uri": "https://api.blockcypher.com/v1/btc/main",
+          "valuesToMap": {
+            "height": "height",
+            "time": "time",
+            "low_fee_per_kb": "low_fee_per_kb",
+            "medium_fee_per_kb": "medium_fee_per_kb",
+            "high_fee_per_kb": "high_fee_per_kb"
+          },
+          "modifiers": {
+          }
+        },
+        {
+          "uri": "https://api.blockchair.com/bitcoin/stats",
+          "valuesToMap": {
+            "height": "data.blocks",
+            "time": "data.best_block_time",
+            "low_fee_per_kb": null,
+            "medium_fee_per_kb": "data.suggested_transaction_fee_per_byte_sat",
+            "high_fee_per_kb": null
+          },
+          "modifiers": {
+            "medium_fee_per_kb": "*1000"
+          }
+        }
+      ]
+    }
+  ],
+  "targetServers": [
+    {
+      "uri": "http://devnet-nodes.qortal.link:11111/",
+      "apiKey": "3emLj1L5M1e8uQDob8bF3b"
+    },
+    {
+      "uri": "http://devnet-nodes.qortal.link:11112/",
+      "apiKey": "3emLj1L5M1e8uQDob8bF3b"
+    }
+  ]
+}
